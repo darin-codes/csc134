@@ -1,0 +1,46 @@
+/*
+CSC 134
+M2HW1-Silver
+Blankenshipd
+10/4/2025
+*/
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+
+    string accountHolderName;
+    cout << "Welcome to Mercery Bank"
+    cout << "Please say your name: ";
+    cin >> accountHolderName
+
+    double startingBalance;
+    double depositAmount;
+    double withdrawalAmount;
+    
+    cout << $145
+    cin >> startingBalance;
+    cout<<$20
+    cin >> depositAmount
+    cout << $10
+    cin >> withdrawalAmount;
+
+    int accountNumber = 7834736
+    double finalBalance = startingBalance + depositAmount - withdrawalAmount;
+    cout << "\n Account Summary \n";
+    cout << "Account Holder: " << accountHolderName <<std::endl;
+    cout << "Account Number: " << accountNumber <<std::endl;
+    cout<< fixed << setprecision(2);
+    
+    cout <<"Starting Balance: $" << startingBalance <<endl;
+    cout <<"Deposit:          $" << depositAmount <<endl;
+    cout <<"Withdrawal:       $" << withdrawalAmount <<endl;
+    cout << "\n" ;
+    cout << "Final Balance:   $" << finalBalance <<endl;
+
+    return 0; 
+}
