@@ -1,0 +1,35 @@
+// M3LAB1
+// This program demonstrates the use of if statements
+// compiler directives
+// (required for the program to run)
+#include <iostream>
+using namespace std;
+
+
+int main() {
+  // this program simulates a coin toss to determine
+
+  // declare the variable we need
+  int choice; 
+
+  // ask the question
+  cout << "Do you choose heads or tails?" << endl;
+  cout << "Type 1 for heads or 2 for tails: "; 
+  cin >> choice;
+
+  // using if, make a decision based on the user's choice
+
+  if (1 == choice) {
+  	cout << "You elected to receive ball" << endl;
+  }
+  else if (2 == choice) {
+  	cout << "You elected to defend" << endl;
+  }
+  else {
+  	cout << "I'm sorry, that is not a valid choice." << endl;
+  }
+
+    // end message
+  cout << "Lets play ball!" << endl; // this runs no matter what they choose
+  return 0;
+}
