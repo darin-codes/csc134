@@ -1,0 +1,112 @@
+// CSC 134
+// M3HW1 - Silver
+// Blankenshipd
+// 10/15/2025
+
+// Question 1
+cout << “Question 1” << endl;
+
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string input;
+    std:: cout<< "Hello, I'm George your chatbot!" << std::endl;
+    std::cout << "Do you enjoy my services? Please reply Yes or no." << std::endl;
+    std::cin >> input;
+    if (input=="yes"){
+        std::cout << "I'm glad to hear that!" << std::endl;
+    }
+    else if (input=="no"){
+        std::cout << "I'm sorry to hear that." << std::endl;
+    }
+    else{
+        std::cout << "Not sure yet maybe alittle more time will help you make your mind up." << std::endl;
+    }
+    return 0;
+}
+
+
+
+
+// Question 2
+Cout << “Question 2” << endl;
+
+
+
+#include <iostream>
+#include <iomanip>
+
+int main() {
+    // Get the meal price from the user
+    double meal_price;
+    std::cout << "Enter the meal price: $";
+    std::cin >> meal_price;
+
+    // Get the order type from the user
+    int order_type;
+    std::cout << "Enter the order type (1 for dine-in, 2 for to go): ";\
+    std::cin >> order_type;
+
+    // Calcuate the tax
+    double tax_rate = 0.06;
+    double tax_amount = meal_price * tax_rate;
+
+    //Calculate the tip if dine-in
+    double tip_amount = 0.0;
+    if (order_type == 1) {
+        double tip_rate = 0.15;
+        tip_amount = meal_price * tip_rate;
+    }
+
+    // Calculate the total amount due
+    double total_amount = meal_price + tax_amount + tip_amount;
+
+    // Print the receipt
+    std::cout << "\nReceipt:" << std::endl;
+    std::cout << "Meal Price: $" << std::fixed << std::setprecision(2) << meal_price << std::endl;
+    std::cout << "Tax: $" << std::fixed << std::setprecision(2) << tax_amount << std::endl;
+    if (tip_amount > 0) {
+        std::cout << "Tip: $" << std::fixed << std::setprecision(2) << tip_amount << std::endl;
+    }
+    std::cout << "Total Amount Due: $" << std::fixed << std::setprecision(2) << total_amount << std::endl;
+
+    return 0;
+}
+
+
+
+// Question 3
+Cout << “Question 3” << endl;
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    // Seed the random number generator
+    std::srand(static_cast<unsigned int>(std::time(0)));
+
+    // Generate a random number between 1 and 100
+       int number1 = rand() % 10;
+       int number2 = rand() % 10;
+
+       // Calculate the correct answer
+         int correct_answer = number1 + number2;
+
+       // Print the addition problem to the user
+         std::cout << "What is " << number1 << " + " << number2 << "? ";
+
+         // Get the user's answer
+         int user_answer;
+         std::cin >> user_answer;
+
+        // Check if the user's answer is correct
+            if (user_answer == correct_answer) {
+                std::cout << "Correct!" << std::endl;
+            } else {
+                std::cout << "Incorrect. The correct answer is " << correct_answer << "." << std::endl;
+            }
+    
+            return 0;
