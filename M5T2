@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int square(int num) {
+    return num * num;
+}
+
+void printAnswerLine(int num) {
+    std:cout << num << "squared is"
+    << square(num) << std::endl;
+}
+
+int main(){
+    for (int i=1; i<=10; ++i) {
+        printAnswerLine(i);
+
+}
+return 0;
+}
