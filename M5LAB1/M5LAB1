@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+void main_menu();
+void option_two();
+void option_three();
+void choice_back_door();
+void choice_go_home();
+void new_story_branch_1();
+void new_story_branch_2();
+
+int main() {
+    main_menu();
+    return 0;
+}
+
+void main_menu() {
+    cout << "Welcome to the Adventure Game!" << endl;
+    cout << "1. The Walking Dead" << endl;
+    cout << "2. Return of the Fallen soldier" << endl;
+    cout << "3. Exit" << endl;
+    cout << "Enter your choice: ";
+    
+    int choice;
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            Enter the forest();
+            break;
+        case 2:
+            Enter the village();
+            break;
+        case 3:
+            cout << "Exiting the game. Goodbye!" << endl;
+            break;
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+            main_menu();
+            break;
+    }
+}
