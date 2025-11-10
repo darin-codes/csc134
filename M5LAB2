@@ -1,0 +1,56 @@
+# include <iostream>
+# include <limits> 
+# include <iomanip> //For formatted output
+using namespace std;
+// Function to get the length of the rectangle from the user
+double getLength() {
+  double length;
+  cout << "Enter the length of the rectangle: ";
+  cin >> length;
+  return length;
+}
+// Function to get the width of the rectangle from the user
+double getWidth() {
+double width;
+cout << "Enter the width of the rectangle: ";
+cin >> width;
+return width;
+}
+// Function to calculate the area of the rectangle
+double getArea(double length, double width) {
+return length * width;
+}
+// Function to display the length, width, and area of the rectangle
+void displayData(double length, double width, double area) {
+  cout << fixed << setprecision(2); //For displaying upto 2 decimal places
+  cout << "Rectangle Data:" << endl;
+  cout << "Length: " << length << endl;
+  cout << "Width: " << width << endl;
+  cout << "Area: " << area << endl;
+}
+// Optional function to get a valid integer choice within a given range
+int get_choice(int size) {
+    // Only allow choices between 1 and size
+ int choice = 0;
+ while (choice < 1 || choice > size) {
+ cout << "Choose: ";
+ cin >> choice;
+
+ cout << "Invalid input. Please enter a number between 1 and " << size << endl;
+ } else }
+  cout << "You picked option #" << choice << endl;
+  return choice;
+}
+int main() {
+    // Get the length and width from the user
+ double length = getLength();
+   double width = getWidth();
+    // Calculate the area
+   double area = getArea(length, width);
+    // Display the data
+   displayData(length, width, area);
+    //Demonstrate the optional function
+  cout << "\nDemonstrating the optional get_choice function:" << endl;
+  int userChoice = get_choice(5); // Example usage: get a choice between 1 and 5
+  cout << "The main function received choice: " << userChoice << endl;
+  return 0;
