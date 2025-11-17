@@ -1,0 +1,121 @@
+CSC134
+M5LAB1 Bronze
+blankenshipd
+11/15/2025
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    // Declare variables
+    string month1, month2, month3;
+    double rainfall1, rainfall2, rainfall3;
+    double averagerainfall;
+
+    // Get input for the first month
+    cout << "Enter month: ";
+    cin >> month1;
+    cout << "Enter rainfall for " << month1 << ": ";
+    cin >> rainfall1;
+
+    // Get input for the second month
+    cout << "Enter month: ";
+    cin >> month2;
+    cout << "Enter rainfall for " << month2 << ": ";
+    cin >> rainfall2;
+
+    // Get input for the third month
+    cout << "Enter month: ";
+    cin >> month3;
+    cout << "Enter rainfall for " << month3 << ": ";
+    cin >> rainfall3;
+
+    // Calculate average rainfall
+    averagerainfall = (rainfall1 + rainfall2 + rainfall3) / 3.0;
+
+    // Display the average rainfall
+    cout << fixed << setprecision(2);
+    cout << "The average monthly rainfall for " << month1 << ", " << month2 << ", and " << month3 << " is " << averagerainfall << " inches."
+            << endl;
+    return 0;
+}
+
+#include <iostream>
+#include <limits>
+
+int main() {
+    double width, length, height;
+
+    std::cout << "Enter the width of the block: ";
+    std::cin >> width;
+
+    while(std::cin.fail() || width <= 0) {
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Enter the width of the block: ";
+        std::cin >> width;
+
+    }
+
+    std::cout << "Enter the length of the block: ";
+    std::cin >> length;
+    while(std::cin.fail() || length <= 0) {
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Enter the length of the block: ";
+        std::cin >> length;
+    }
+
+    std::cout << "Enter the height of the block: ";
+    std::cin >> height;
+    while(std::cin.fail() || height <= 0) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Enter the height of the block: ";
+        std::cin >> height;
+    }
+    double volume = width * length * height;
+    std::cout << "The volume of the block is: " << volume << std::
+endl;
+    return 0;
+}
+
+#include <iostream>
+#include <string>
+
+int main() {
+    int number;
+    std::string roman_numeral;
+
+    std::cout << "Enter an integer between 1 and 10: ";
+    std::cin >> number;
+
+    if (number == 1) {
+        roman_numeral = "I";
+    } else if (number == 2) {
+        roman_numeral = "II";
+    } else if (number == 3) {
+        roman_numeral = "III";
+    } else if (number == 4) {
+        roman_numeral = "IV";
+    } else if (number == 5) {
+        roman_numeral = "V";
+    } else if (number == 6) {
+        roman_numeral = "VI";
+    } else if (number == 7) {
+        roman_numeral = "VII";
+    } else if (number == 8) {
+        roman_numeral = "VIII";
+    } else if (number == 9) {
+        roman_numeral = "IX";
+    } else if (number == 10) {
+        roman_numeral = "X";
+    std::cout << "The Roman numeral for " << number << " is " << roman_numeral << "." << std::endl;
+    } else {
+        std::cout << "Error: Input must be an integer between 1 and 10." << std::endl;
+    }
+
+return 0;
+}
