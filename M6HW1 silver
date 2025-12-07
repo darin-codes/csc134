@@ -1,0 +1,75 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+void entranceHall() ;
+Void library() ;
+void study() ;
+void gameOver() ;
+void gameWin() ;
+
+bool hasKey = false;
+string playerName;
+
+int main() {
+    cout << "Welcome to the Mystery Mansion! What is your name, Adventurer? ";
+    getline(cin, playerName);
+
+    cout << "\nWelcome, " << playerName << "!\n";
+    cout << "You find yourself in a dimly lit entrance hall. A grand staircase looms before you, but a heavy oak door to your right seems to be the only other way out.\n";
+    cout << "A tattered sign on the wall reads: 'The ancient artifact is hidden within. Only the clever shall find it.'\n";
+
+    entranceHall();
+
+    return 0;
+}
+
+void entranceHall() {
+    cout << "\nYou are in the Entrance Hall. You can:\n";
+    cout << "1. Go up the staircase to the Library.\n";
+    cout << "2. Try to open the oak door.\n";
+    cout << "Choose an option (1 or 2): ";
+
+    int choice;
+    cin >> choice;
+
+    if (choice == 1) {
+        library();
+    } else if (choice == 2) {
+        if (hasKey) {
+            gameWin();
+        } else {
+            cout << "\nThe door is locked. You need a key to open it.\n";
+            entranceHall();
+        }
+    } else {
+        cout << "\nInvalid choice. Try again.\n";
+        entranceHall();
+    }
+}
+
+void library() {
+    cout << "\nYou are in the Library. Dusty books line the walls, and a large desk sits in the center.\n";
+    cout << "On the desk, you see a shiny key.\n";
+    cout << "You can:\n";
+    cout << "1. Take the key and go back to the Entrance Hall.\n";
+    cout << "2. Search the bookshelves for clues.\n";
+    cout << "Choose an option (1 or 2): ";
+
+    int choice;
+    cin >> choice;
+
+    if (choice == 1) {
+        hasKey = true;
+        cout << "\nYou took the key and head back to the Entrance Hall.\n";
+        entranceHall();
+    } else if (choice == 2) {
+        cout << "\nYou search the bookshelves but find nothing useful.\n";
+        library();
+    } else {
+        cout << "\nInvalid choice. Try again.\n";
+        library();
+    }
+}
