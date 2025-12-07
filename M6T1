@@ -1,0 +1,48 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void part() {
+    int totalCars = 0;
+    int cars;
+
+    cout << "part 1: No Arrays" << endl;
+    for (int day = 1; day <= 7; day++) {
+        cout << "Enter number of cars sold on day " << day << ": ";
+        cin >> cars;
+        totalCars += cars;
+    } 
+    double average = static_cast<double>(totalCars) / 7;
+    cout << fixed << setprecision(2);
+    cout << "Average cars sold per day: " << average << endl;
+}
+void part2() {
+    const int days = 7;
+    int carsSold[days];
+    int totalCars = 0;
+
+    cout << "\npart 2: With Arrays" << endl;
+    for (int day = 0; day < days; day++) {
+        cout << "Enter number of cars sold on day " << (day + 1) << ": ";
+        cin >> carsSold[day];
+        totalCars += carsSold[day];
+    }
+    double average = static_cast<double>(totalCars) / days;
+    cout << fixed << setprecision(2);
+    cout << "Average cars sold per day: " << average << endl;
+}
+    cout << "\nweekly car data (Bar Chart)" << endl;
+    for (int day = 0; day < days; day++) {
+        cout << "Day " << (day + 1) << ": ";
+        for (int i = 0; i < carsSold[day]; i++) {
+            cout << "*";
+        }
+        cout << " (" << carsSold[day] << " cars)" << endl;
+
+}
+int main() {
+    part();
+    part2();
+    return 0;
+}
